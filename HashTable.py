@@ -25,11 +25,10 @@ class HashTable:
         else:
             # We should change the current value to a linked list and add the new value at the end of that list
             if type( self.storage[ index ] ) == int:
-                list = LinkedList();
+                list = LinkedList()
                 list.insertLast( self.storage[ index ] )
                 self.storage[ index ] = list
-            else:
-                self.storage[ index ].insertLast( val )
+            self.storage[ index ].insertLast( val )
     
     def find( self, val ):
         index = (int((((val / 13) * 32) + 14) * 7)) % self.cap
@@ -42,7 +41,7 @@ class HashTable:
             if type(self.storage[ index ]) != int:
                 list = self.storage[ index ]
                 node = list.findNode( val )
-                print( "Printing the value from a node in the linked list", node)
+                print( "Printing the value from a node in the linked list", node.val)
             return self.storage[ index ], index
     
     def remove( self, val ):

@@ -1,4 +1,4 @@
-#from Node import Node
+
 from Node import Node
 
 class LinkedList:
@@ -33,7 +33,7 @@ class LinkedList:
         current = self.head
         while current != None:
             if current.val == val:
-                return current.val
+                return current
             current = current.next
         return None
 
