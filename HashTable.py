@@ -37,12 +37,16 @@ class HashTable:
             print( f"The value {val} is not yet in our HashTable!" )
             return None
         else:
-            print( f"The value {val} is stored at position {index} of the HashTable" )
             if type(self.storage[ index ]) != int:
+                print( f"The value {val} is stored at position {index} of the HashTable" )
                 list = self.storage[ index ]
                 node = list.findNode( val )
                 print( "Printing the value from a node in the linked list", node.val)
-            return self.storage[ index ], index
+            else:
+                if self.storage[ index ] == val:
+                    print( f"The value {val} is stored at position {index} of the HashTable" )
+                else:
+                    print( f"The value {val} is not yet in our HashTable!" )
     
     def remove( self, val ):
         pass
